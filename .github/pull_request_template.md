@@ -1,10 +1,9 @@
 ---
 name: Pull Request
-about: Submit a pull request
 ---
 
 ## Description
-Please describe your changes and link any related issues.
+Please describe your changes.
 
 ## Checklist
 - [ ] My code follows the project's coding style
