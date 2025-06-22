@@ -1,0 +1,31 @@
+name: Feature Request
+about: Suggest an idea for this project
+labels: enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        Please describe the feature you would like to see.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: A clear and concise description of the feature.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this feature important to you?
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Additional details or context.
+    validations:
+      required: false
