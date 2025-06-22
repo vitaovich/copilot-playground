@@ -1,4 +1,4 @@
-# copilot-playground
+# [copilot-playground](https://github.com/vitaovich/copilot-playground)
 
 ## Overview
 Playground for testing and exploring the capabilities of GitHub Copilot in various development scenarios.
