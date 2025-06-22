@@ -6,9 +6,20 @@ Playground for testing and exploring the capabilities of GitHub Copilot in vario
 ## Useful Docs
 
 ### Github Copilot
+#### Configurations
+- [Using GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot)
+
 - [Using GitHub Copilot in the command line](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-in-the-command-line)
-- [GitHub Copilot Coding Agent Has Arrived! - Discussion](https://github.com/orgs/community/discussions/159068)
+
 - [GitHub Copilot features](https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features)
+
+- [Configuring GitHub Copilot in your environment (Useful Shortcuts HERE)](https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/configuring-github-copilot-in-your-environment)
+
+- [Choosing the right AI model for your task](https://docs.github.com/en/copilot/using-github-copilot/ai-models/choosing-the-right-ai-model-for-your-task)
+
+#### Discussions
+- [GitHub Copilot Coding Agent Has Arrived! - Discussion](https://github.com/orgs/community/discussions/159068)
+- [Copilot Change logs](https://github.blog/changelog/label/copilot/)
 
 ### SSH
 - [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
