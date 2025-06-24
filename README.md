@@ -3,6 +3,23 @@
 ## Overview
 Playground for testing and exploring the capabilities of GitHub Copilot in various development scenarios.
 
+## Projects
+
+This playground includes multiple projects to demonstrate GitHub Copilot's capabilities across different technologies:
+
+### 🐍 [Python Backend](./python-backend/)
+A FastAPI-based REST API demonstrating:
+- Project scaffolding and structure
+- API endpoint creation
+- Interactive documentation
+- Health checks and monitoring
+
+### ⚛️ [Next.js Frontend](./nextjs/)
+A Next.js application showcasing:
+- React component development
+- TypeScript integration
+- Modern frontend tooling
+
 ## Useful Docs
 
 ### Github Copilot
