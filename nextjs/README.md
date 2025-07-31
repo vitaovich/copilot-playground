@@ -37,7 +37,7 @@ npm run test:watch
 ### Test Structure
 
 - Tests are located in the `__tests__/` directory
-- Test files use the `.test.tsx` extension
+- Test files use the `.test.tsx` extension for React components or `.test.ts` for utility functions and business logic
 - Tests use React Testing Library for component testing
 - Jest configuration is in `jest.config.js`
 
