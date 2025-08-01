@@ -1,8 +1,13 @@
 name: Frontend CI/CD
 
+# Add concurrency control to prevent multiple runs for the same PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ '**' ]
     paths:
       - 'nextjs/**'
       - '.github/workflows/frontend-ci-cd.yml'
@@ -10,13 +15,14 @@ on:
       - 'nextjs/README.md'
       - '*.md'
   pull_request:
-    branches: [ main, develop ]
+    branches: [ '**' ]
     paths:
       - 'nextjs/**'
       - '.github/workflows/frontend-ci-cd.yml'
     paths-ignore:
       - 'nextjs/README.md'
       - '*.md'
+  workflow_dispatch:
 
 jobs:
   # ==========================================
@@ -119,7 +125,11 @@ jobs:
     name: 🚀 Deploy to Staging
     runs-on: ubuntu-latest
     needs: [build]
-    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    if: |
+      (github.event_name == 'pull_request') ||
+      (github.ref == 'refs/heads/develop' && github.event_name == 'push') ||
+      (github.event_name == 'workflow_dispatch') ||
+      (contains(github.event.head_commit.message, '[deploy-staging]') && github.event_name == 'push')
     environment: staging
     
     steps:
@@ -143,9 +153,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    environment: production
+    environment: 
+      name: production
+      url: https://your-production-url.com
     
     steps:
+      - name: Manual approval checkpoint
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: vitaovich
+          minimum-approvals: 1
+          issue-title: "Production Deployment Approval Required"
+          issue-body: |
+            Please review and approve the production deployment.
+            
+            **Branch:** ${{ github.ref }}
+            **Commit:** ${{ github.sha }}
+            **Author:** ${{ github.actor }}
+            
+            [View commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})
+      
       - name: Checkout code
         uses: actions/checkout@v4
       
@@ -160,4 +188,4 @@ jobs:
           echo "🚧 Production deployment would happen here"
           echo "📦 Artifacts downloaded and ready for deployment"
           echo "🔧 TODO: Implement actual production deployment logic"
-          echo "🛡️ TODO: Add deployment approval process"
+          echo "✅ Manual approval received for production deployment"
