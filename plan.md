@@ -243,74 +243,74 @@ Use this as the execution checklist for implementation. Keep tasks in order and 
 
 ### Phase 0: Pre-implementation setup
 
-- [ ] Confirm branch is up to date and working tree is clean.
-- [ ] Confirm all target files exist and paths are correct.
-- [ ] Run `npm install` in `nextjs/` to ensure local tooling is available.
-- [ ] Run baseline checks (`npm run lint`, `npm test`, `npm run build`) and record current failures/warnings.
+- [x] Confirm branch is up to date and working tree is clean.
+- [x] Confirm all target files exist and paths are correct.
+- [x] Run `npm install` in `nextjs/` to ensure local tooling is available.
+- [x] Run baseline checks (`npm run lint`, `npm test`, `npm run build`) and record current failures/warnings.
 
 ### Phase 1: Build data layer (required extraction)
 
-- [ ] Create `nextjs/app/data/projects.ts`.
-- [ ] Define and export `Project` type.
-- [ ] Add an exported `projects` array with at least 3 entries.
-- [ ] Ensure every project has `id`, `title`, `description`, `tech`, and `link`.
-- [ ] Ensure each `id` is unique and stable (no duplicate values).
-- [ ] Ensure data file has no UI logic or JSX.
+- [x] Create `nextjs/app/data/projects.ts`.
+- [x] Define and export `Project` type.
+- [x] Add an exported `projects` array with at least 3 entries.
+- [x] Ensure every project has `id`, `title`, `description`, `tech`, and `link`.
+- [x] Ensure each `id` is unique and stable (no duplicate values).
+- [x] Ensure data file has no UI logic or JSX.
 
 ### Phase 2: Implement portfolio page structure
 
-- [ ] Update `nextjs/app/page.tsx` to import `projects` from `app/data/projects.ts`.
-- [ ] Replace starter content with semantic portfolio structure.
-- [ ] Add hero/header with portfolio identity (name + role/summary line).
-- [ ] Add About Me section with `aria-labelledby` and matching heading id.
-- [ ] Add Projects section with `aria-labelledby` and matching heading id.
-- [ ] Render projects using `projects.map(...)`.
-- [ ] Use stable React keys (`project.id`) for rendered project cards.
-- [ ] Include per-project title and description in each card.
-- [ ] Include a tech stack line in each card.
-- [ ] Include project link with `target="_blank"` and `rel="noopener noreferrer"`.
+- [x] Update `nextjs/app/page.tsx` to import `projects` from `app/data/projects.ts`.
+- [x] Replace starter content with semantic portfolio structure.
+- [x] Add hero/header with portfolio identity (name + role/summary line).
+- [x] Add About Me section with `aria-labelledby` and matching heading id.
+- [x] Add Projects section with `aria-labelledby` and matching heading id.
+- [x] Render projects using `projects.map(...)`.
+- [x] Use stable React keys (`project.id`) for rendered project cards.
+- [x] Include per-project title and description in each card.
+- [x] Include a tech stack line in each card.
+- [x] Include project link with `target="_blank"` and `rel="noopener noreferrer"`.
 
 ### Phase 3: Apply portfolio-specific styling
 
-- [ ] Refactor `nextjs/app/page.module.css` from starter layout to portfolio layout.
-- [ ] Add container width constraints and section spacing.
-- [ ] Add readable typography rules for headings/body copy.
-- [ ] Add project card visuals (border, radius, spacing).
-- [ ] Ensure link styles have hover/focus affordances.
-- [ ] Preserve light/dark mode compatibility.
-- [ ] Add/confirm mobile breakpoint behavior for small screens.
-- [ ] Validate no overflow or clipped content at narrow widths.
+- [x] Refactor `nextjs/app/page.module.css` from starter layout to portfolio layout.
+- [x] Add container width constraints and section spacing.
+- [x] Add readable typography rules for headings/body copy.
+- [x] Add project card visuals (border, radius, spacing).
+- [x] Ensure link styles have hover/focus affordances.
+- [x] Preserve light/dark mode compatibility.
+- [x] Add/confirm mobile breakpoint behavior for small screens.
+- [x] Validate no overflow or clipped content at narrow widths.
 
 ### Phase 4: Update metadata and page identity
 
-- [ ] Update `nextjs/app/layout.tsx` metadata title.
-- [ ] Update metadata description for portfolio context.
-- [ ] Remove starter references (e.g., "Create Next App" wording).
+- [x] Update `nextjs/app/layout.tsx` metadata title.
+- [x] Update metadata description for portfolio context.
+- [x] Remove starter references (e.g., "Create Next App" wording).
 
 ### Phase 5: Update tests
 
-- [ ] Replace snapshot-only assertions in `nextjs/__tests__/page.test.tsx` with targeted checks.
-- [ ] Add assertion for About Me heading.
-- [ ] Add assertion for Projects heading.
-- [ ] Add assertion that at least one project item renders.
-- [ ] Add assertion for one known project title from `projects` data.
-- [ ] Remove or regenerate obsolete snapshot file only if snapshot strategy is retained.
+- [x] Replace snapshot-only assertions in `nextjs/__tests__/page.test.tsx` with targeted checks.
+- [x] Add assertion for About Me heading.
+- [x] Add assertion for Projects heading.
+- [x] Add assertion that at least one project item renders.
+- [x] Add assertion for one known project title from `projects` data.
+- [x] Remove or regenerate obsolete snapshot file only if snapshot strategy is retained.
 
 ### Phase 6: Verification and quality gates
 
-- [ ] Run `npm run lint` and resolve only relevant issues.
-- [ ] Run `npm test` and ensure portfolio tests pass.
-- [ ] Run `npm run build` and ensure production build succeeds.
-- [ ] Manually verify UI in browser at desktop and mobile widths.
-- [ ] Manually verify dark mode readability and contrast.
-- [ ] Confirm all external links open safely in a new tab.
+- [x] Run `npm run lint` and resolve only relevant issues.
+- [x] Run `npm test` and ensure portfolio tests pass.
+- [x] Run `npm run build` and ensure production build succeeds.
+- [x] Manually verify UI in browser at desktop and mobile widths.
+- [x] Manually verify dark mode readability and contrast.
+- [x] Confirm all external links open safely in a new tab.
 
 ### Phase 7: Final review and handoff
 
-- [ ] Confirm Definition of Done items are all satisfied.
-- [ ] Review changed files for scope control (no unrelated edits).
-- [ ] Prepare concise summary of what changed and why.
-- [ ] Prepare follow-up ideas (optional) without implementing them.
+- [x] Confirm Definition of Done items are all satisfied.
+- [x] Review changed files for scope control (no unrelated edits).
+- [x] Prepare concise summary of what changed and why.
+- [x] Prepare follow-up ideas (optional) without implementing them.
 
 ---
 
