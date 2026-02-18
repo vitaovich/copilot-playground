@@ -1,93 +1,57 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import { projects } from "./data/projects";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <header className={styles.hero}>
+          <h1>Jane Doe</h1>
+          <p>Frontend Developer building accessible, responsive web experiences.</p>
+        </header>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <section aria-labelledby="about-heading" className={styles.section}>
+          <h2 id="about-heading">About Me</h2>
+          <p>
+            I build modern web applications with React and Next.js, with a focus
+            on usability, clean architecture, and maintainable front-end systems.
+          </p>
+        </section>
+
+        <section aria-labelledby="projects-heading" className={styles.section}>
+          <h2 id="projects-heading">Projects</h2>
+          <ul className={styles.projectList}>
+            {projects.map((project) => (
+              <li key={project.id} className={styles.projectCard}>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <p className={styles.techStack}>
+                  <strong>Tech:</strong> {project.tech.join(", ")}
+                </p>
+                <a
+                  className={styles.projectLink}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+        <a href="mailto:jane@example.com">jane@example.com</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          GitHub
         </a>
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="https://www.linkedin.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          LinkedIn
         </a>
       </footer>
     </div>
