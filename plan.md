@@ -312,6 +312,35 @@ Use this as the execution checklist for implementation. Keep tasks in order and 
 - [x] Prepare concise summary of what changed and why.
 - [x] Prepare follow-up ideas (optional) without implementing them.
 
+#### Phase 7 Evidence
+
+- Validation run: `npm run lint` → passed with no ESLint warnings/errors.
+- Validation run: `npm test -- --runInBand` → passed (`2` tests, `0` snapshots).
+- Validation run: `npm run build` → passed; static app route generated successfully.
+- Validation run: `npx tsc --noEmit` → passed after adding `@types/jest`.
+- Manual runtime check: `npm run dev` and load `http://localhost:3000` in browser → page rendered and responded with `200`.
+- Scope control check: only planned files were modified (page, styles, metadata, tests, typed project data, and plan checklist).
+
+#### Phase 7 Deliverables
+
+**Concise summary of what changed and why**
+
+- Replaced starter homepage content with a portfolio layout so the page now directly supports the requested About + Projects experience.
+- Extracted project data into `nextjs/app/data/projects.ts` to separate content from rendering and make future content updates low-risk.
+- Refactored `nextjs/app/page.module.css` to support responsive portfolio sections/cards and corrected footer layout issues for consistent visual structure.
+- Updated metadata in `nextjs/app/layout.tsx` to remove starter branding and reflect portfolio identity.
+- Replaced snapshot-based page test with targeted behavior assertions in `nextjs/__tests__/page.test.tsx` to improve test signal and reduce brittle UI churn.
+- Added `@types/jest` so `npx tsc --noEmit` passes cleanly with Jest globals during typecheck.
+
+**Follow-up ideas (optional, not implemented)**
+
+- Replace placeholder project links (`example.com`) with real project URLs and add optional repository/demo dual links.
+- Add a small `Contact` section with a short form or CTA button while keeping one-page layout.
+- Add a dedicated `ProjectCard` component if project presentation grows (keeps `page.tsx` smaller).
+- Add simple filtering by tech stack only if project count increases beyond a basic list.
+- Add a lightweight E2E smoke test (Playwright) for heading visibility and external-link presence.
+- Add Open Graph/Twitter metadata and social preview image for shareability.
+
 ---
 
 ## Testing Plan
